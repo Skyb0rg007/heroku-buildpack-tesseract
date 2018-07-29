@@ -43,3 +43,4 @@ mkdir -p $BUILD_DIR/.profile.d
 echo "export PATH=\"$TESSERACT_OCR_DIR/bin:\$PATH\"" > $ENVSCRIPT
 echo "export LD_LIBRARY_PATH=\"$TESSERACT_OCR_DIR/lib:\$LD_LIBRARY_PATH\"" >> $ENVSCRIPT
 echo "export TESSDATA_PREFIX=\"$TRAINING_DATA_DIR/\"" >> $ENVSCRIPT
+echo "export TESS_INCLUDE=\"$TESSERACT_OCR_DIR/include\"" >> $ENVSCRIPT
