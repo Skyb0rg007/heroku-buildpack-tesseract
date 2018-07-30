@@ -46,4 +46,4 @@ echo "export PATH=\"$TESSERACT_OCR_DIR/bin:\$PATH\"" > $ENVSCRIPT
 echo "export LD_LIBRARY_PATH=\"$TESSERACT_OCR_DIR/lib:\$LD_LIBRARY_PATH\"" >> $ENVSCRIPT
 echo "export TESSDATA_PREFIX=\"$TRAINING_DATA_DIR/\"" >> $ENVSCRIPT
 
-echo "export C_INCLUDE_PATH=\"$INSTALL_DIR/include\"" > $BP_DIR/export
+echo "export HEADER_LOC=\"$INSTALL_DIR/include\"" > $BP_DIR/export
