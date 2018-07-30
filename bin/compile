@@ -1,5 +1,6 @@
 #!/bin/bash
 BUILD_DIR=$1
+BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
 TESSERACT_OCR_VERSION=3.04.01
 TESSERACT_OCR_DATA_VERSION=3.04.00
 
@@ -15,6 +16,7 @@ TESSERACT_OCR_LANGUAGES=eng
 
 echo "Build dir: $BUILD_DIR"
 echo "Install dir: $INSTALL_DIR"
+echo "BP_DIR: $BP_DIR"
 echo "CWD: $PWD"
 
 echo "Unpacking Tesseract-OCR binaries"
@@ -43,4 +45,5 @@ mkdir -p $BUILD_DIR/.profile.d
 echo "export PATH=\"$TESSERACT_OCR_DIR/bin:\$PATH\"" > $ENVSCRIPT
 echo "export LD_LIBRARY_PATH=\"$TESSERACT_OCR_DIR/lib:\$LD_LIBRARY_PATH\"" >> $ENVSCRIPT
 echo "export TESSDATA_PREFIX=\"$TRAINING_DATA_DIR/\"" >> $ENVSCRIPT
-echo "export TESS_INCLUDE=\"$TESSERACT_OCR_DIR/include\"" >> $ENVSCRIPT
+
+echo "export C_INCLUDE_PATH=\"$INSTALL_DIR/include\"" > $BP_DIR/export
